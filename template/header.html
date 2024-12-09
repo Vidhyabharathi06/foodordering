@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant|index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+      .carousel-inner img {
+          height: 400px; /* Set the desired height */
+          object-fit: cover; /* Ensures the image covers the area and retains its aspect ratio */
+          
+      }
+    </style>
+    
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar bg-dark"><!--START OF NAV BAR-->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index.html" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Vfoods</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active"  aria-current="page" href="/home" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ">Home</a>
+          </li>
+          {% if  user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Welcome, {{ user.username }}!</a>
+          </li>
+                
+          <li class="nav-item">
+            <a class="nav-link"  href="/logout" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/login" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Register</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="/menu" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">menu</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Contact Us</a>
+          </li>  
+        </ul>
+        <form class="d-flex" role="search" action="{% url 'search' %}" method="get">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+          <button class="btn btn-outline-danger " type="submit">Search</button>
+      </form>
+      
+          <!-- <button class="btn btn-outline-danger" type="submit" style="color: beige;font-size: x-large;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Search</button> -->
+        </form>
+        <div>
+          &nbsp;&nbsp;<b><a href="/viewcart"><i class="bi bi-cart-fill text-light"></i></a></b>
+        </div>
+      </div>
+    </div>
+  </nav><!--End OF NAV BAR-->
+
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/images/slidebiriyani.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1 style="color: white;">Welcome to AgustD Restaurant</h1>
+              <h5 style="color: white;">Delicious Biriyani</h5>
+              <p>Experience the rich flavors and spices of our special biriyani.</p>
+            </div>
+            </div>
+          
+          <div class="carousel-item">
+            <img src="/static/images/idledosa.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1 style="color: white;">Welcome to AgustD Restaurant</h1>
+            <h5 style="color: white;">Crispy Dosa</h5>
+              <p>Experience the perfect blend of crisp and spice with our dosa.</p>
+            </div>
+          </div>
+          
+          <div class="carousel-item">
+            <img src="/static/images/idyly only.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1 style="color: white;">Welcome to AgustD Restaurant</h1>
+            <h5 style="color: white;">Soft Idly</h5>
+              <p>Fluffy and soft idly, perfect with chutney and sambhar.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="/static/images/bevergaes.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            <h1 style="color: white;">Welcome to AgustD Restaurant</h1>
+            <h5 style="color: white;">Refreshing Beverages</h5>
+              <p>Quench your thirst with our range of refreshing beverages.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div>
+            <img src="/static/images/cake.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            <h1 style="color: white;">Welcome to AgustD Restaurant</h1>
+            <h5 style="color: white;">Delicious Desserts</h5>
+              <p>Treat yourself to a variety of sweet indulgences.</p>
+            </div>
+           </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      </div>
+       <!-- End of slider -->
+</body>
+</html>

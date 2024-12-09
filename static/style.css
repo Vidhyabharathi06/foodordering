@@ -1,0 +1,171 @@
+
+.col-md-3{
+    margin-top: auto;
+    border-radius: 30px;
+    
+}
+
+.col-md-5{
+    border-radius: 50px;
+}
+
+.col-md-3{
+     border-top-right-radius: 50px;
+}
+.col-md-5{
+    
+    border-radius: 50px;
+}
+
+.anch{
+    text-decoration: none;
+}
+.social{
+    display: inline-flex;
+    width: 50px;
+    
+
+}
+.card-img-top{
+    border: 1px solid whitesmoke;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.col-md-8 {
+    border-radius: 6px;
+}
+
+.col-md-5{
+    margin-top: auto;
+    border-radius: 30px;
+    
+}
+
+
+/* .carousel-inner img {
+    height: 300px; /* Set the desired height */
+    /* object-fit: cover; /* Ensures the image covers the area and retains its aspect ratio 
+} */
+.carousel-inner img {
+    height: 500px; /* Set your desired height */
+    width: 100%; /* Ensures it takes the full width of the carousel */
+    object-fit: cover; /* Ensures the entire image fits within the height without cropping */
+}
+.carousel-caption {
+    bottom: 20%; /* Position the caption higher or lower */
+    left: 15%; /* Adjust to position text on the left */
+}
+
+body {
+    background-image: url('dark blue.jpg');
+    background-size:cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: wheat;
+    color:darkblue;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    color: darkblue;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    font-family: serif;
+    font-size: large;
+    color: black;
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#home {
+    background: url('Premium Photo _ Black Stone Food Background Cooking Ingredients Top view Free space for your text.jpeg') no-repeat center center/cover;
+    background-size: auto;
+    width: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+#menu {
+    color:whitesmoke;
+    text-align: left;
+    font-size: large;
+    font-family: sans-serif;font-style: oblique;
+}
+#about {
+    color:whitesmoke;
+    text-align: center;
+    font-size: larger;
+    font-family: Arial,sans-serif; 
+}
+#contact {
+    color: lavender;
+    text-align: left;
+    font-size: x-large;
+    font-family: Arial, sans-serif;
+    font-style: oblique;
+
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label, form input, form textarea, form button {
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.div{
+    margin: 6rem 12rem;
+    height: 36rem;
+    width: 66rem;
+    background-position:center;
+    background-size: 100% 100%;
+    box-shadow: 40px 40px 20px;
+    animation: slider 10s linear infinite;
+    
+}

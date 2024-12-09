@@ -1,0 +1,10 @@
+{% if results %}
+    {% for item in results %}
+        <a href="{% url 'menu_item_detail' item.id %}" class="list-group-item list-group-item-action">
+            <h5 class="mb-1">{{ item.name }}</h5>
+            <p class="mb-1">{{ item.description }}</p>
+        </a>
+    {% endfor %}
+{% else %}
+    <p>No results found for "{{ query }}".</p>
+{% endif %}

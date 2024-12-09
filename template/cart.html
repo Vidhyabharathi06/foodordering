@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+
+
+<div class="row"><!--for cart-->
+          <center>
+           <h1>My cart</h1>
+          </center>
+           <div class="col-md-9 mt-5">
+            {% for x in products %}
+            {% if forloop.counter == 1 %}
+           <h2 class="bg-danger-subtle text-dark p-3"style="font-family: Georgia, 'Times New Roman', Times, serif ;">Customer details</h2>
+          <p><strong>Name:</strong>&nbsp;&nbsp;&nbsp;{{x.uid.username}}</p>
+          <p><strong>Mobile:</strong>&nbsp;&nbsp;&nbsp;9875378906</p> 
+          {% endif %}
+          {% endfor %}
+          <!-- <h2 class="bg-danger text-dark p-3 "style="font-family: Georgia, 'Times New Roman', Times, serif ;">Cart details</h2>
+         </div>
+           <div class="col-md-3 mt-5">
+            <h2 class="bg-danger text-dark p-3"style="font-family: Georgia, 'Times New Roman', Times, serif ;">Total Amount</h2>
+            <p><strong>(Total{{n}}Items):</strong>&nbsp;&nbsp;&nbsp;{{total}}</p>
+            <p><strong>Grand Total:</strong>&nbsp;&nbsp;&nbsp;Rs.{{total}}</p>
+            <a href="/placeorder" class="btn btn-primary">Place order</a>
+          </div>
+        </div>
+        </div>end of cart -->
+        <div class="row">
+          <h3 class="bg-danger-subtle p-3">Cart Details</h3>
+          
+              {% for x in products %}
+          <div class="col-md-4">
+              <img src="{{x.pid.pimage.url}}" class="card-img-top" alt="...">
+              
+          </div>
+          <div class="col-md-8 mt-5">
+  
+  
+              <p><strong> Dish Name:</strong>&nbsp;&nbsp;{{x.pid.name}}</p>
+              <p><strong>Price:</strong>&nbsp;&nbsp;{{x.pid.price}}</p>
+              {%  if x.category == 1 %}
+              <p class="card-text">Fashion</p>
+              {% elif x.category == 2 %}
+              <p class="card-text">pure veg</p>
+              {% else %}
+              <p class="card-text">Non veg</p>
+              {% endif %}
+              <p><strong>About Dish:</strong>&nbsp;&nbsp;{{x.pid.pdetails}}</p>
+              <p>
+                <strong>QTY:</strong>
+                <a href="/update/0/{{x.id}}"><button class="btn btn-danger">-</button></a>
+                <input type="number" value="{{x.qty}}">
+                <a href="/update/1/{{x.id}}"><button class="btn btn-success">+</button></a>
+  
+              </p>
+              <a href="/remove/{{x.id}}"><button class="btn btn-danger">Remove</button></a>
+          </div>
+          {% endfor %}
+          <div class="row">
+            <h3 class="bg-danger-subtle p-3">Total Amount</h3>
+            <p><strong>Total({{n}}: Items):</strong>&nbsp;&nbsp;Rs.{{total}}</p>
+            
+            <p><strong>Grand Total:</strong>&nbsp;&nbsp;Rs.{{total}}</p>
+            <a href="/placeorder"><button class="btn btn-danger">Place Order</button></a>
+
+        </div>
+          
+  
+  
+          
+      </div>
+  </div><!--End OF Cart-->       
+
+        {% endblock 'main' %}
